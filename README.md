@@ -1,1 +1,1 @@
-# inventory
+# Inventory app for sneakerhead 👟
