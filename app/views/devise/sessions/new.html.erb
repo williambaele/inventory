@@ -1,47 +1,41 @@
-<div class="min-h-screen bg-purple-400 flex justify-center items-center">
-	<div class="absolute w-60 h-60 rounded-xl bg-purple-300 -top-5 -left-16 z-0 transform rotate-45 hidden md:block">
+<div class="min-h-screen bg-orange-400 flex justify-center items-center">
+	<div class="absolute w-60 h-60 rounded-xl bg-orange-300 -top-5 -left-16 z-0 transform rotate-45 hidden md:block">
 	</div>
-	<div class="absolute w-48 h-48 rounded-xl bg-purple-300 -bottom-6 -right-10 transform rotate-12 hidden md:block">
+	<div class="absolute w-48 h-48 rounded-xl bg-orange-300 -bottom-6 -right-10 transform rotate-12 hidden md:block">
 	</div>
 	<div class="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
 		<div>
-			<h1 class="text-3xl font-bold text-center mb-4 cursor-pointer">Create An Account</h1>
-			<p class="w-80 text-center text-sm mb-8 font-semibold text-gray-700 tracking-wide cursor-pointer">Create an
-				account to enjoy all the services without any ads for free!</p>
+			<h1 class="text-3xl font-bold text-center mb-4 cursor-pointer">Login</h1>
 		</div>
 		<div class="space-y-4">
 			<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                  <div class="field">
-                    <%= f.label :email %><br />
-                    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                  <div class="field mb-5">
+                    <%= f.email_field :email, autofocus: true, placeholder:"Email", autocomplete: "email", class:"w-full px-2 py-2 text-gray-700 bg-gray-100 rounded" %>
                   </div>
 
-                  <div class="field">
-                    <%= f.label :password %><br />
-                    <%= f.password_field :password, autocomplete: "current-password" %>
+                  <div class="field mb-5">
+                    <%= f.password_field :password, autocomplete: "current-password", placeholder:"Password" , class:"w-full px-2 py-2 text-gray-700 bg-gray-100 rounded" %>
                   </div>
 
                   <% if devise_mapping.rememberable? %>
-                    <div class="field">
+                    <div class="field mb-5">
                       <%= f.check_box :remember_me %>
                       <%= f.label :remember_me %>
                     </div>
                   <% end %>
 
                   <div class="actions">
-                    <%= f.submit "Log in" %>
+                    <%= f.submit "Log in", class:"py-3 w-64 text-xl text-white bg-orange-400 rounded" %>
                   </div>
               <% end %>
-               <%= render "devise/shared/links" %>
     </div>
 			<div class="text-center mt-6">
-				<button class="py-3 w-64 text-xl text-white bg-purple-400 rounded-2xl">Create Account</button>
-				<p class="mt-4 text-sm">Already Have An Account? <span class="underline cursor-pointer"> Sign In</span>
+				<%=link_to new_user_registration_path do %><button>Create Account</button><% end %>
 				</p>
 			</div>
 		</div>
-		<div class="w-40 h-40 absolute bg-purple-300 rounded-full top-0 right-12 hidden md:block"></div>
+		<div class="w-40 h-40 absolute bg-orange-300 rounded-full top-0 right-12 hidden md:block"></div>
 		<div
-			class="w-20 h-40 absolute bg-purple-300 rounded-full bottom-20 left-10 transform rotate-45 hidden md:block">
+			class="w-20 h-40 absolute bg-orange-300 rounded-full bottom-20 left-10 transform rotate-45 hidden md:block">
 		</div>
 	</div>
