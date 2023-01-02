@@ -16,14 +16,12 @@
                   <div class="field mb-5">
                     <%= f.password_field :password, autocomplete: "current-password", placeholder:"Password" , class:"w-full px-2 py-2 text-gray-700 bg-gray-100 rounded" %>
                   </div>
-
                   <% if devise_mapping.rememberable? %>
                     <div class="field mb-5">
                       <%= f.check_box :remember_me %>
                       <%= f.label :remember_me %>
                     </div>
                   <% end %>
-
                   <div class="actions">
                     <%= f.submit "Log in", class:"py-3 w-64 text-xl text-white bg-orange-400 rounded" %>
                   </div>
