@@ -5,7 +5,7 @@
 	</div>
 	<div class="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
 		<div>
-			<h1 class="text-3xl font-bold text-center mb-4 cursor-pointer">Login</h1>
+			<h1 class="text-3xl font-bold text-center mb-4">Login</h1>
 		</div>
 		<div class="space-y-4">
 			<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -22,7 +22,7 @@
                     </div>
                   <% end %>
                   <div class="actions">
-                    <%= f.submit "Log in", class:"py-3 w-64 text-xl text-white bg-orange-400 rounded" %>
+                    <%= f.submit "Log in", class:"py-2 w-64 text-xl text-white bg-orange-400 rounded" %>
                   </div>
               <% end %>
     </div>
