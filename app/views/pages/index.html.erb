@@ -22,3 +22,9 @@
     </a>
   </div>
 </div>
+
+<ul>
+  <% @items.each do |item| %>
+    <li><%= item.name %> | <%= item.sku %> -> <%= link_to "check me", item_path(item) %></li>
+  <% end %>
+</ul>

@@ -1,2 +1,8 @@
-<%= @item.name%>
-<%= link_to  "edit", edit_item_path(@item) %>
+<div class="flex justify-between items-center">
+  <h1 class="text-4xl">
+    <%= @item.name%>
+  </h1>
+  <%= link_to edit_item_path(@item) do %>
+    <button class="bg-gray-700 font-medium text-xl text-white px-3 rounded-md">Edit</button>
+  <% end %>
+</div>
