@@ -7,7 +7,7 @@
 <% end %>
 
 <% if alert %>
-  <div class="bottom-5 right-5 z-60 absolute h-screen">
+  <div class="bottom-5 right-5 z-60 absolute">
     <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded flex items-center flash-message" role="alert">
       <span class="block sm:inline mr-8"><%= alert %></span>
   </div>
@@ -21,8 +21,6 @@
   </div>
   </div>
 <% end %>
-
-
 
 <script>
 window.setTimeout(function() {

@@ -1,29 +1,37 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<div class="min-h-screen bg-gray-700 flex justify-center items-center overflow-hidden">
+	<div class="absolute w-60 h-60 rounded-xl bg-gray-600 -top-5 -left-16 z-1 transform rotate-45 hidden md:block">
+	</div>
+	<div class="absolute w-48 h-48 rounded-xl bg-gray-600 bottom-6 right-10 transform rotate-12 hidden md:block">
+	</div>
+	<div class="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
+		<div>
+			<h1 class="text-3xl font-bold text-center mb-4">Sign up</h1>
+		</div>
+		<div class="space-y-4">
+			<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                  <div class="field mb-5">
+                    <%= f.email_field :email, autofocus: true, placeholder:"Email", autocomplete: "email", class:"w-full px-2 py-2 text-gray-700 bg-gray-100 rounded" %>
+                  </div>
+                  <div class="field mb-5">
+                    <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password (6 characters min)", class:"w-full px-2 py-2 text-gray-700 bg-gray-100 rounded" %>
+                  </div>
+                   <div class="field mb-5">
+                    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Password confirmation", class:"w-full px-2 py-2 text-gray-700 bg-gray-100 rounded" %>
+                  </div>
+                  <div class="actions">
+                  <%=link_to new_user_registration_path do %>
+                    <%= f.submit "Sign up", class:"py-2 w-64 text-xl text-white bg-gray-600 rounded" %>
+                  <% end %>
+                  </div>
+              <% end %>
+    </div>
+			<div class="text-center mt-6">
+				<%=link_to new_user_session_path do %><button>Already have an account ?</button><% end %>
+				</p>
+			</div>
+		</div>
+		<div class="w-40 h-40 absolute bg-gray-600 rounded-full top-0 right-12 hidden md:block z-1"></div>
+		<div
+			class="w-20 h-40 absolute bg-gray-600 rounded-full bottom-20 left-10 transform rotate-45 hidden md:block z-1">
+		</div>
+	</div>
