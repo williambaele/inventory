@@ -15,10 +15,12 @@
       <aside>
         <%= render "shared/navbar"%>
       </aside>
-      <main class="relative p-6 w-full h-screen">
-        <%= yield %>
-        <%= render 'shared/flash'%>
-      </main>
+      <main class="p-6 w-full h-screen">
+        <div class="relative">
+          <%= yield %>
+          <%= render 'shared/flash'%>
+        </main>
+        </div>
     </div>
   <% else %>
     <%= yield %>
