@@ -11,14 +11,16 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
   <% if user_signed_in? %>
+  <div class="flex">
     <aside>
       <%= render "shared/navbar"%>
     </aside>
-  <% end %>
-  <body class="relative flex">
-    <%= render 'shared/flash'%>
-    <div>
+    <body class="relative">
+      <%= render 'shared/flash'%>
       <%= yield %>
-    </div>
-  </body>
+    </body>
+  </div>
+  <% else %>
+    <%= yield %>
+  <% end %>
 </html>
