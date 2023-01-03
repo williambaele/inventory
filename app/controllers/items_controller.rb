@@ -11,7 +11,6 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @stocking_date = (DateTime.now - @shoe.purchase_date).to_i
   end
   # CREATE
   def new
@@ -21,8 +20,8 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(items_params)
     if @item.save
-      redirect_to item_path(@item)
       flash[:success] = "Item created"
+      redirect_to item_path(@item)
     else
       flash[:alert] = "Error ! Try again"
       render :new, status: :unprocessable_entity
@@ -31,12 +30,18 @@ class ItemsController < ApplicationController
   # UPDATE
 
   def edit
+    @item = Item.find(params[:id])
   end
 
   def update
-    @item.update(item_params)
-    redirect_to item_path(@item)
-    flash[:success] = "Item updated"
+    @item = Item.find(params[:id])
+    if @item.update(items_params)
+      flash[:success] = "Item updated"
+      redirect_to item_path(@item)
+    else
+      flash[:alert] = "Error ! Try again"
+      render :new, status: :unprocessable_entity
+    end
   end
 
 
