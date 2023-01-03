@@ -22,9 +22,59 @@
     </a>
   </div>
 </div>
+<!-- TABLE OF ITEMS -->
+<div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 ">
+    <div  class="flex h-8 items-center justify-between my-5">
+      <h2 class="text-xl font-medium tracking-wide text-slate-700">
+        Your last items
+      </h2>
+      <a href="/shoes" class="border-b border-b-slate-800 pb-0.5 text-xs+ font-medium text-slate-800">View All</a>
+    </div>
+    <div class="inline-block min-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg rounded">
 
-<ul>
-  <% @items.each do |item| %>
-    <li><%= item.name %> | <%= item.sku %> -> <%= link_to "check me", item_path(item) %></li>
-  <% end %>
-</ul>
+      <table class="min-w-full">
+        <thead>
+          <tr>
+            <th class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-slate-800 uppercase border-b border-gray-200 bg-gray-200">
+              Name
+            </th>
+            <th class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-slate-800 uppercase border-b border-gray-200 bg-gray-200">
+              Sku
+            </th>
+             <th class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-slate-800 uppercase border-b border-gray-200 bg-gray-200">
+              Brand
+            </th>
+            <th class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-slate-800 uppercase border-b border-gray-200 bg-gray-200">
+              Size
+            </th>
+            <th class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-slate-800 uppercase border-b border-gray-200 bg-gray-200">
+              Retailer
+            </th>
+            <th class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-slate-800 uppercase border-b border-gray-200 bg-gray-200">
+              Purchase price
+            </th>
+            <th class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-slate-800 uppercase border-b border-gray-200 bg-gray-200">
+              Purchase date
+            </th>
+            <th class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-slate-800 uppercase border-b border-gray-200 bg-gray-200">
+            </th>
+          </tr>
+        </thead>
+        <tbody class="bg-white">
+          <tr>
+            <% @items.each do |item| %>
+              <td class="px-6 py-4 text-sm leading-5 text-gray-500 border-b border-gray-200 whitespace-nowrap"><%= item.name %></td>
+              <td class="px-6 py-4 text-sm leading-5 text-gray-500 border-b border-gray-200 whitespace-nowrap"><%= item.sku %></td>
+              <td class="px-6 py-4 text-sm leading-5 text-gray-500 border-b border-gray-200 whitespace-nowrap"><%= item.sku %></td>
+              <td class="px-6 py-4 text-sm leading-5 text-gray-500 border-b border-gray-200 whitespace-nowrap"><%= item.sku %></td>
+              <td class="px-6 py-4 text-sm leading-5 text-gray-500 border-b border-gray-200 whitespace-nowrap"><%= item.sku %></td>
+              <td class="px-6 py-4 text-sm leading-5 text-gray-500 border-b border-gray-200 whitespace-nowrap"><%= item.sku %> €</td>
+              <td class="px-6 py-4 text-sm leading-5 text-gray-500 border-b border-gray-200 whitespace-nowrap"><%= item.sku %></td>
+              <td class="px-6 py-4 text-sm leading-5 text-gray-500 border-b border-gray-200 whitespace-nowrap"><%= link_to "Check", item_path(item), class:"text-gray-900 hover:text-indigo-900" %></td>
+          </tr>
+            <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
