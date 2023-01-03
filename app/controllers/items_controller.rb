@@ -3,14 +3,14 @@ class ItemsController < ApplicationController
 
   def index
     if params[:query].present?
-      @shoes = Shoe.search_by_name_and_sku(params[:query])
+      @items = Item.search_by_name_and_sku(params[:query])
     else
-      @shoes = Shoe.all
+      @items = Item.all
     end
   end
 
   def show
-    @shoe = Shoe.find(params[:id])
+    @item = Item.find(params[:id])
     @stocking_date = (DateTime.now - @shoe.purchase_date).to_i
   end
   # CREATE
@@ -19,8 +19,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-    @item.user = current_user
+    @item = Item.new(items_params)
     if @item.save
       redirect_to item_path(@item)
       flash[:success] = "Item created"
@@ -52,6 +51,6 @@ class ItemsController < ApplicationController
   private
 
   def items_params
-    params.require(:item).permit(:name, :sku, :brand, :size, :retail, :retailer, :comment, :purchase_date)
+    params.require(:item).permit(:name, :sku)
   end
 end
