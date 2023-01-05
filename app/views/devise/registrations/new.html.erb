@@ -23,15 +23,13 @@
             <%= f.email_field :email, autofocus: true, placeholder:"Email", autocomplete: "email", class:"w-full px-2 py-2 text-gray-700 bg-gray-100 rounded" %>
           </div>
           <div class="field mb-5">
-            <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password (6 characters min)", class:"w-full px-2 py-2 text-gray-700 bg-gray-100 rounded" %>
+            <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password (6 char. min)", class:"w-full px-2 py-2 text-gray-700 bg-gray-100 rounded" %>
           </div>
             <div class="field mb-5">
             <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Password confirmation", class:"w-full px-2 py-2 text-gray-700 bg-gray-100 rounded" %>
           </div>
           <div class="actions md:col-span-2 justify-center flex">
-            <%=link_to new_user_registration_path do %>
-              <%= f.submit "Sign up", class:"py-2 w-64 text-xl text-white bg-gray-600 rounded" %>
-            <% end %>
+            <%= f.submit "Sign up", class:"py-2 w-64 text-xl text-white bg-gray-600 rounded" %>
           </div>
         <% end %>
     </div>
