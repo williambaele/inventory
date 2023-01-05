@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(items_params)
     if @item.save
-      flash[:success] = "Item created"
+      flash[:success] = "Your item has been created"
       redirect_to item_path(@item)
     else
       flash[:alert] = "Error ! Try again"
@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     if @item.update(items_params)
-      flash[:success] = "Item updated"
+      flash[:success] = "Your item has been updated"
       redirect_to item_path(@item)
     else
       flash[:alert] = "Error ! Try again"
