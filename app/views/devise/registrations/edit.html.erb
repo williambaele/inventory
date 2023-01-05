@@ -31,8 +31,8 @@
       <div class="field mb-5">
         <%= f.password_field :current_password, autocomplete: "current-password", placeholder:"Password (we need your current password to confirm your changes)", class:"w-full px-2 py-2 text-gray-700 bg-gray-100 rounded" %>
       </div>
-      <div class="actions">
-        <%= f.submit "Update" %>
+      <div class="actions md:col-span-2 flex justify-center">
+        <%= f.submit "Update", class:" w-64 px-4 py-2 text-gray-200 bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700" %>
       </div>
     <% end %>
   </div>
