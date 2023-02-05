@@ -9,9 +9,10 @@ puts "Destroying data"
 Item.destroy_all
 name = [ "Nike Dunk", "Yeezy 350V2", "Jordan 1"]
 sku = [ "DD1509-101", "DD3509-200"]
-
-
+state = [ "USED", "DS"]
+brand = [ "Nike", "Adidas"]
+size = [ "36", "44"]
 100.times do
-  item = Item.create!(name: name.sample, sku: sku.sample)
+  item = Item.create!(brand: brand.sample,size: size.sample,state: state.sample,name: name.sample, sku: sku.sample, retail: rand(10..350), purchase_date: "2023-01-01")
   puts item.name
 end
