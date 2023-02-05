@@ -6,7 +6,20 @@
     <button class="bg-gray-700 font-medium text-xl text-white px-3 rounded-md">Edit</button>
   <% end %>
 </div>
-<div class="flex">
-  <%= @item.brand%>
-  <%= @item.retail%>
+<div class="flex flex-col">
+  <div>
+    <%= @item.brand%>
+  </div>
+  <div>
+    <%= @item.retail%> €
+  </div>
+  <div>
+    EU<%= @item.size%>
+  </div>
+  <div>
+    <%= @item.state%>
+  </div>
+  <div>
+    <%= @item.comment%>
+  </div>
 </div>
