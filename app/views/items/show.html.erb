@@ -1,10 +1,17 @@
 <div class="flex justify-between items-center">
-  <h1 class="text-4xl">
-    <%= @item.name%>
-  </h1>
-  <%= link_to edit_item_path(@item) do %>
-    <button class="bg-gray-700 font-medium text-xl text-white px-3 rounded-md">Edit</button>
-  <% end %>
+  <div>
+    <h1 class="text-4xl">
+      <%= @item.name%>
+    </h1>
+  </div>
+  <div>
+    <%= link_to edit_item_path(@item) do %>
+      <button class="bg-gray-700 font-medium text-lg text-white px-3 rounded-md">Edit</button>
+    <% end %>
+    <%= link_to edit_item_path(@item) do %>
+      <button class="bg-green-700 font-medium text-lg text-white px-3 rounded-md">Sold</button>
+    <% end %>
+</div>
 </div>
 <div class="flex flex-col">
   <div>
