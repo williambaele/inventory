@@ -20,6 +20,9 @@
   <div>
     <%= @item.retail%> €
   </div>
+   <div>
+    <%= @item.purchase_date.strftime("%d/%m/%Y")%>
+  </div>
   <div>
     EU<%= @item.size%>
   </div>
