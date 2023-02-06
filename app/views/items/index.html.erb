@@ -1,15 +1,20 @@
-<div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 ">
-    <div  class="flex h-8 items-center justify-between my-5">
-      <h2 class="text-2xl font-medium tracking-wide text-slate-700">
-        All your items
-      </h2>
-      <%= form_with url: items_path, method: :get do %>
-        <%= text_field_tag :query, params[:query], class: "items-center inset-y-0 left-0 form-control w-full p-3 pl-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-slate-700 focus:border-slate-700  dark:placeholder-gray-400 dark:text-white dark:focus:ring-slate-700 dark:focus:border-slate-700", placeholder: "Search by name or sku"%>
-        <%= submit_tag "Search", class: "absolute right-1 bottom-1.5 text-white bg-[#082032] hover:bg-slate-700 font-medium rounded-lg text-sm px-4 py-2" %>
-      <% end %>
+<div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+    <div  class="flex h-8 justify-between items-center my-5">
+      <div>
+        <h2 class="text-2xl font-medium text-slate-700">
+          All your items
+        </h2>
+      </div>
+      <div class="relative">
+        <%= form_with url: items_path, method: :get do %>
+          <%= text_field_tag :query, params[:query], class: "block w-full py-4 pr-20 pl-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-indigo-500 focus:border-indigo-500", placeholder: "Search your item"%>
+          <button type="submit" class="text-gray-900 absolute right-2.5 bottom-2.5 bg-indigo-200 hover:bg-indigo-300 focus:ring-4 focus:outline-none focus:ring-indigo-400 font-medium rounded-lg text-sm px-4 py-2">
+            <svg aria-hidden="true" class="w-5 h-5 text-gray-900 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </button>
+        <% end %>
+      </div>
     </div>
     <div class="inline-block min-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg rounded">
-
       <table class="min-w-full">
         <thead>
           <tr>
