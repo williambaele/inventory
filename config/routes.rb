@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root to: 'pages#index'
-  resources :items
-  resources :sales
+  resources :items do
+    resources :sales, only: [:new, :create]
+  end
   # Defines the root path route ("/")
   # root "articles#index"
 end

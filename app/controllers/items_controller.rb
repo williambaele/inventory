@@ -9,15 +9,10 @@ class ItemsController < ApplicationController
     end
   end
 
-  def sold=(sold)
-    if sold == "true"
-      self.sale = Sale.create!(item: self)
-    end
-  end
-
   def show
     @item = Item.find(params[:id])
   end
+
   # CREATE
   def new
     @item = Item.new
@@ -33,15 +28,24 @@ class ItemsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  # UPDATE
 
+  # UPDATE
   def edit
     @item = Item.find(params[:id])
+  end
+
+  def sold
+    @item = Item.find(params[:id])
+    @item.sold = true
+    redirect_to new_item_sale_path(item_id: @item.id)
   end
 
   def update
     @item = Item.find(params[:id])
     if @item.update(items_params)
+      if @item.sold == "true"
+        Sale.create!(item: @item)
+      end
       flash[:success] = "Your item has been updated"
       redirect_to item_path(@item)
     else
@@ -60,6 +64,6 @@ class ItemsController < ApplicationController
   private
 
   def items_params
-    params.require(:item).permit(:name, :sku, :brand, :retail, :comment, :size, :state, :purchase_date)
+    params.require(:item).permit(:name, :sku, :brand, :retail, :comment, :size, :state, :purchase_date, :sold)
   end
 end

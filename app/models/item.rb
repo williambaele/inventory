@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  has_one :sale
   validates :name, presence: true
   validates :sku, presence: true
   validates :size, presence: true
