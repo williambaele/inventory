@@ -5,9 +5,10 @@ class SalesController < ApplicationController
   end
 
   def create
+    @item = Item.find(params[:item_id])
     @sale = Sale.new(sale_params)
-    if @sale.save
-      redirect_to item_sale_path(@item, @sale)
+    if @sale.save!
+      redirect_to item_path(@item)
       flash[:success] = "Sale was successfully created."
     else
       render :new
