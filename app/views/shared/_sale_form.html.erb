@@ -1,14 +1,7 @@
-<%= form_for @sale do |f| %>
+<%= form_for @sale, url: item_sales_path(@item) do |f| %>
   <%= f.hidden_field :item_id, value: @item.id %>
   <div class="field">
     <%= f.label :price %>
-    <%= f.text_field :price %>
   </div>
-  <div class="field">
-    <%= f.label :date %>
-    <%= f.date_field :date %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Create Sale" %>
-  </div>
+  <!-- More form fields go here -->
 <% end %>
