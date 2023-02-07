@@ -43,9 +43,6 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     if @item.update(items_params)
-      if @item.sold == "true"
-        Sale.create!(item: @item)
-      end
       flash[:success] = "Your item has been updated"
       redirect_to item_path(@item)
     else
