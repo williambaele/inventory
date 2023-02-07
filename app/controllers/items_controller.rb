@@ -9,6 +9,12 @@ class ItemsController < ApplicationController
     end
   end
 
+  def sold=(sold)
+    if sold == "true"
+      self.sale = Sale.create!(item: self)
+    end
+  end
+
   def show
     @item = Item.find(params[:id])
   end
