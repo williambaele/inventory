@@ -7,7 +7,7 @@ class SalesController < ApplicationController
   def create
     @sale = Sale.new(sale_params)
     if @sale.save
-      redirect_to root_path
+      redirect_to item_sale_path(@item, @sale)
       flash[:success] = "Sale was successfully created."
     else
       render :new
