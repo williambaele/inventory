@@ -1,4 +1,7 @@
 class SalesController < ApplicationController
+  def index
+    @sales = Sale.all
+  end
   def new
     @item = Item.find(params[:item_id])
     @sale = Sale.new(item: @item)
