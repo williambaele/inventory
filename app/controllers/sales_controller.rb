@@ -12,8 +12,8 @@ class SalesController < ApplicationController
     @sale = Sale.new(sale_params)
     if @sale.save!
       @item.update(sold: true)
-      redirect_to item_path(@item)
       flash[:success] = "Sale was successfully created."
+      redirect_to item_path(@item)
     else
       render :new
     end
