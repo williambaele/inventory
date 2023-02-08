@@ -38,7 +38,17 @@
     <% if @item.sold == true %>
       <p>Status: sold</p>
       <p>Sale price: <%= @sale_price %>€</p>
-      <p>Befenit made: <%= @benefit %>€</p>
+      <p>Befenit made:
+        <% if @benefit >= 0 %>
+         <p class="text-green-700">
+          <%= @benefit %>€
+         </p>
+        <% else %>
+          <p class="text-red-700">
+            <%= @benefit %>€
+         </p>
+      </p>
+      <% end %>
 
     <% else %>
       <p>Status: instock</p>
