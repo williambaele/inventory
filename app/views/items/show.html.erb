@@ -37,7 +37,8 @@
   <div>
     <% if @item.sold == true %>
       <p>Status: sold</p>
-      <p>Sale price</p><%= @sale_price %>€
+      <p>Sale price: <%= @sale_price %>€</p>
+      <p>Befenit made: <%= @benefit %>€</p>
 
     <% else %>
       <p>Status: instock</p>

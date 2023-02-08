@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @sale_price = Sale.where(item_id: @item.id).pluck(:sale_price).first
+    @benefit = @sale_price - @item.retail
   end
 
   # CREATE
