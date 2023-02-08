@@ -8,9 +8,11 @@
     <%= link_to edit_item_path(@item) do %>
       <button class="bg-gray-700 font-medium text-lg text-white px-3 rounded-md">Edit</button>
     <% end %>
-    <%= link_to new_item_sale_path(@item) do %>
-      <button class="bg-green-700 font-medium text-lg text-white px-3 rounded-md">Sold</button>
-    <%end%>
+    <% if @item.sold == false %>
+      <%= link_to new_item_sale_path(@item) do %>
+        <button class="bg-green-700 font-medium text-lg text-white px-3 rounded-md">Sold</button>
+      <%end%>
+    <% end %>
 </div>
 </div>
 <div class="flex flex-col">
@@ -33,6 +35,10 @@
     <%= @item.comment%>
   </div>
   <div>
-    <%= @item.sold %>
+    <% if @item.sold == true %>
+      <p>Status: sold</p>
+    <% else %>
+      <p>Status: instock</p>
+    <% end %>
   </div>
 </div>
