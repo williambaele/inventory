@@ -1,6 +1,8 @@
 class SalesController < ApplicationController
   def index
-    @sales = Sale.all
+    @sales = Item.where(sold: true)
+    @items = Item.all
+
   end
   def new
     @item = Item.find(params[:item_id])
