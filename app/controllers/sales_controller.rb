@@ -2,7 +2,11 @@ class SalesController < ApplicationController
   def index
     @sales = Item.where(sold: true)
     @items = Item.all
-
+    if params[:id].present?
+      @item = Item.find(params[:id])
+      @sale_price = Sale.where(item_id: @item.id).pluck(:sale_price).first
+      @benefit = @sale_price - @item.retail
+    end
   end
   def new
     @item = Item.find(params[:item_id])
