@@ -52,7 +52,7 @@
               <td class="px-6 py-4 text-sm leading-5 text-gray-500 border-b border-gray-200 whitespace-nowrap"><%= item.size %></td>
               <td class="px-6 py-4 text-sm leading-5 text-gray-500 border-b border-gray-200 whitespace-nowrap"><%= item.name %></td>
               <td class="px-6 py-4 text-sm leading-5 text-gray-500 border-b border-gray-200 whitespace-nowrap"><%= item.retail %> €</td>
-              <td class="px-6 py-4 text-sm leading-5 text-gray-500 border-b border-gray-200 whitespace-nowrap"><%= @benefit %>€</td>
+              <td class="px-6 py-4 text-sm leading-5 text-gray-500 border-b border-gray-200 whitespace-nowrap"><%= item.sale_price - item.retail %>€</td>
               <td class="px-6 py-4 text-sm leading-5 text-gray-500 border-b border-gray-200 whitespace-nowrap"><%= link_to "Check", item_path(item), class:"text-gray-900 hover:text-indigo-900 bg-indigo-200 px-2 py-2 rounded" %>
               </td>
           </tr>

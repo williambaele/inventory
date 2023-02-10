@@ -1,4 +1,5 @@
 class SalesController < ApplicationController
+
   def index
     @items = Item.where(sold: true)
     if params[:id].present?
