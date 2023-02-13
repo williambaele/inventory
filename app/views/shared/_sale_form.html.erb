@@ -7,6 +7,9 @@
     <div>
       <%= f.date_field :sale_date, class: "w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"%>
     </div>
+    <div class="col-span-2">
+      <%= f.text_field :comment, class:"w-full px-2 py-2 text-gray-700 bg-gray-200 rounded", placeholder: "Comment" %>
+    </div>
   </div>
    <div class="flex justify-center mt-6">
     <%= f.submit "Submit", class:"px-4 py-2 text-gray-200 bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700" %>
