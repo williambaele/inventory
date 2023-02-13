@@ -124,10 +124,10 @@
           <tr>
             <td>Comment</td>
             <td>
-            <% if @sale_comment == nil %>
-              <p>None</p>
-              <% else %>
+            <% if @sale_comment.present? %>
               <%= @sale_comment%>
+              <% else %>
+              <p>None</p>
             <% end %>
             </td>
           </tr>

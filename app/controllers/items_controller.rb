@@ -20,7 +20,6 @@ class ItemsController < ApplicationController
       @sale_platform = Sale.where(item_id: @item.id).pluck(:sale_platform).first
       @sale_comment = Sale.where(item_id: @item.id).pluck(:comment).first
     end
-
   end
 
   # CREATE
