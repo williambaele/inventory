@@ -11,6 +11,9 @@ gem 'devise'
 #Search PG
 gem "pg_search"
 
+#Chart
+gem "chartkick"
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
