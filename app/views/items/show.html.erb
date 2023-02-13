@@ -32,6 +32,37 @@
     <!-- END -->
   </div>
 </div>
+<!-- ITEM'S INFO -->
+<div class="grid grid-cols-2 mt-10 gap-6">
+  <!-- PURCHASE'S DETAILS -->
+  <div>
+    <h2 class="font-medium text-xl text-left mb-2 bg-indigo-200 rounded pr-5 pl-1 w-fit">
+      Purchase's details
+    </h2>
+
+    <table class="table-fixed">
+      <tbody>
+        <tr>
+          <td>Name</td>
+          <td><%= @item.name%></td>
+        </tr>
+        <tr>
+          <td>Brand</td>
+          <td><%= @item.brand%></td>
+        </tr>
+        <tr>
+          <td>Shining Star</td>
+          <td>Earth, Wind, and Fire</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="flex">
+      <h3>Brand:</h3>
+      <%= @item.brand%>
+    </div>
+  </div>
+  <!-- SALE'S DETAILS -->
+</div>
 <div class="flex flex-col">
   <div>
     <%= @item.brand%>
@@ -72,4 +103,5 @@
     <% end %>
   </div>
 </div>
+<!-- END -->
 <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
