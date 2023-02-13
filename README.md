@@ -6,7 +6,7 @@ You can easily track your sale's activity.
 
 Here is an overview of the index page of the dashboard 🙌🏼
 
-[dashboard](https://i.postimg.cc/Kc3bw6KZ/Capture-d-e-cran-2023-02-13-a-11-19-37.png)
+![dashboard](https://i.postimg.cc/Kc3bw6KZ/Capture-d-e-cran-2023-02-13-a-11-19-37.png)
 
 
 ## ITEM
