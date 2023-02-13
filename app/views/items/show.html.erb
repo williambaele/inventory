@@ -92,11 +92,15 @@
           </tr>
           <tr>
             <td>Sale's date</td>
-            <td><%= @sale_date.strftime("%d/%m/%Y") %></td>
+            <% if @sale_date%>
+              <td><%= @sale_date.strftime("%d/%m/%Y") %></td>
+            <% end %>
           </tr>
           <tr>
             <td>Stocking period</td>
-            <td><%= @stocking_period.floor %> days</td>
+            <% if @stocking_period %>
+              <td><%= @stocking_period.floor %> days</td>
+            <% end %>
           </tr>
           <tr>
             <td>Benefit made</td>
@@ -115,7 +119,9 @@
           </tr>
           <tr>
             <td>Benefit made by stocking's day </td>
-            <td><%= @benefit_daily.floor %> €/days</td>
+            <% if @benefit_daily%>
+              <td><%= @benefit_daily.floor %> €/days</td>
+            <% end %>
           </tr>
           <tr>
             <td>Sale's platform</td>
