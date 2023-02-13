@@ -14,7 +14,13 @@ class ItemsController < ApplicationController
     @sale_price = Sale.where(item_id: @item.id).pluck(:sale_price).first
     if @sale_price.present?
       @benefit = @sale_price - @item.retail
+      @sale_date = Sale.where(item_id: @item.id).pluck(:sale_date).first
+      @stocking_period = @sale_date - @item.purchase_date
+      @benefit_daily = @benefit/@stocking_period
+      @sale_platform = Sale.where(item_id: @item.id).pluck(:sale_platform).first
+      @sale_comment = Sale.where(item_id: @item.id).pluck(:comment).first
     end
+
   end
 
   # CREATE

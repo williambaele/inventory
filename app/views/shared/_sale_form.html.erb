@@ -7,8 +7,11 @@
     <div>
       <%= f.date_field :sale_date, class: "w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"%>
     </div>
-    <div class="col-span-2">
+    <div>
       <%= f.text_field :comment, class:"w-full px-2 py-2 text-gray-700 bg-gray-200 rounded", placeholder: "Comment" %>
+    </div>
+    <div>
+      <%= f.select :sale_platform, options_for_select(['Stockx', 'Alias', 'Restocks', 'HypeBoost', 'Discord', 'WeTheNew', 'KKZ', 'Other']), {}, class: "w-full px-2 py-2 text-gray-700 bg-gray-200 rounded"%>
     </div>
   </div>
    <div class="flex justify-center mt-6">
