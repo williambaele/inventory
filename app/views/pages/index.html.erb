@@ -50,7 +50,11 @@
     <div class="absolute bg-gray-400 top-0 left-0 p-1 rounded-br rounded-tl text-sm">Sleeping value</div>
   </div>
 </div>
-<div class="grid grid-cols-4 gap-4">
+<div class="flex justify-end">
+  <a id="charts" class="border-b border-b-slate-800 pb-0.5 text-xs+ font-medium text-slate-800">Show charts</a>
+</div>
+<!-- CHARTS -->
+<div class="grid grid-cols-4 gap-4" id="charts-area">
   <div class="col-span-3">
   <%= line_chart Sale.group_by_day(:created_at).count %>
   </div>
@@ -58,6 +62,7 @@
     <%= pie_chart Item.group(:brand).count %>
   </div>
 </div>
+<!-- END CHARTS -->
 <!-- TABLE OF ITEMS -->
 <div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 ">
     <div  class="flex h-8 items-center justify-between my-5">
@@ -134,3 +139,19 @@
     </div>
   </div>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const chartsButton = document.getElementById("charts");
+    const chartsArea = document.getElementById("charts-area");
+    chartsArea.style.display = "none";
+
+    chartsButton.addEventListener("click", function(event) {
+      event.preventDefault();
+      if (chartsArea.style.display === "none") {
+        chartsArea.style.display = "grid";
+      } else {
+        chartsArea.style.display = "none";
+      }
+    });
+  });
+</script>
