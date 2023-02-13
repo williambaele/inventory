@@ -50,6 +50,9 @@
     <div class="absolute bg-gray-400 top-0 left-0 p-1 rounded-br rounded-tl text-sm">Sleeping value</div>
   </div>
 </div>
+<div>
+  <%= line_chart Item.group_by_day(:created_at).count %>
+</div>
 <!-- TABLE OF ITEMS -->
 <div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 ">
     <div  class="flex h-8 items-center justify-between my-5">

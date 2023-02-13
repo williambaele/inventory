@@ -14,6 +14,9 @@ gem "pg_search"
 #Chart
 gem "chartkick"
 
+#GroupBy
+gem "groupdate"
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
