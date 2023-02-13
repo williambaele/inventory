@@ -59,7 +59,7 @@
     <h2 class="font-medium text-xl text-left mb-2">
       Sales past 30 days
     </h2>
-  <%= line_chart Sale.group_by_day(:created_at).count %>
+  <%= area_chart Sale.group_by_day(:created_at).count, colors: ["#c7d2fe", "#f43f5e"] %>
   </div>
   <div class="col-span-1">
     <h2 class="font-medium text-xl text-left mb-2">
