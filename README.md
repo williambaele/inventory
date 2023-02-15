@@ -18,6 +18,7 @@ Here is an overview of the index page of the dashboard 🙌🏼
 - Purchase date
 - State (DS/USED)
 - Comment
+- Search by Name/SKU
 
 ## Sales
 - Sale's price
